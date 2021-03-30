@@ -39,7 +39,7 @@
 -p, --port  - Порт. По умолчанию 8000.
 
 
--l, --listen - Адрес. По умолчанию localhost.
+-l, --listen - Адрес. По умолчанию 0.0.0.0
 
 
 ## Тестирование проекта
@@ -47,3 +47,10 @@
 <code>python3 tests.py </code>
 
 Файлы "cbr_pages.html", "currencies.json" - данные для тестирования.
+
+
+## Docker
+
+docker build: <code>docker build -t converter-http-server:1.0.0 .</code>
+
+docker run: <code>docker run -e PORT=8000 -p 8000:8000 --rm --name converter-server-running converter-http-server:1.0.0</code>
